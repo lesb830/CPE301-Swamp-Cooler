@@ -1,4 +1,4 @@
-# CPE301-Swamp-Cooler
+# CPE301-Swamp-Cooler-Final
 
 ## Final Project – CPE 301.1001  
 **Authors**: Group 19 – Leslie Becerra, Kj Moreno, Khoa Minh Do
