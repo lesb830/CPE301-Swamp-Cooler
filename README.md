@@ -5,7 +5,7 @@
 
 ### Overview
 
-This project is a fully functional, Arduino-based embedded system designed to control a swamp cooler. Built on the Arduino Mega2560 platform, the system integrates multiple sensors and actuators to simulate the behavior of a real-world evaporative cooling system. The cooler monitors environmental conditions and reacts to changes in temperature and water levels, while also allowing for user interaction through buttons and a vent angle control mechanism.
+This project is a fully functional, Arduino based embedded system designed to control a swamp cooler. Built on the Arduino Mega2560 platform, the system integrates multiple sensors and actuators to simulate the behavior of a real world evaporative cooling system. The cooler monitors environmental conditions and reacts to changes in temperature and water levels, while also allowing for user interaction through buttons and a vent angle control mechanism.
 
 ### Features
 
@@ -36,21 +36,12 @@ This project is a fully functional, Arduino-based embedded system designed to co
 
 The swamp cooler operates based on its current state. The main loop continuously calls a `checkState()` function (unless disabled), which reads the temperature and water level to determine the correct operational state. Depending on conditions, the system transitions between IDLE, RUNNING, or ERROR. All state changes and key actions are timestamped and printed via Serial communication. The system ensures responsive, low-level performance by avoiding most Arduino libraries and relying instead on direct register manipulation where required.
 
-### Repository Contents
-
-- `main.ino`: Core logic for the swamp cooler system.
-- `README.md`: Project description and documentation.
-- `Images/`: Folder for schematic and circuit photos (if available).
-- `Video/`: Link or placeholder for demonstration video.
-- `Docs/`: Supporting technical documentation and state diagrams.
-
 ### Demonstration Video
 
-[Insert YouTube or Google Drive link here]
 
-### Circuit Schematic
 
-[Insert schematic image or PDF here or include in `Images/` folder]
+### Circuit
+
 
 ### Notes
 
