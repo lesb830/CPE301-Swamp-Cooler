@@ -57,7 +57,3 @@ The swamp cooler operates based on its current state. The main loop continuously
 - All code complies with the course requirement to avoid restricted Arduino functions like `pinMode()` and `digitalWrite()` unless explicitly allowed.
 - The system uses `millis()` instead of `delay()` to handle periodic updates like LCD refreshes.
 - Only the motor uses `analogWrite()` as permitted.
-
----
-
-© 2025 Group 19 – CPE301, University of Nevada, Reno
