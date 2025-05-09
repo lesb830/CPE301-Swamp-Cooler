@@ -5,46 +5,28 @@
 
 ### Overview
 
-This project is a fully functional, Arduino based embedded system designed to control a swamp cooler. Built on the Arduino Mega2560 platform, the system integrates multiple sensors and actuators to simulate the behavior of a real world evaporative cooling system. The cooler monitors environmental conditions and reacts to changes in temperature and water levels, while also allowing for user interaction through buttons and a vent angle control mechanism.
+This project is a functional swamp cooler built on the Arduino Mega 2560 platform. The system uses various sensors and actuators to simulate a real-world evaporative cooling system, adjusting temperature and airflow based on environmental conditions. It features a user interface with buttons, LCD display, and visual status indicators.
+
 
 ### Features
 
-- Real-time temperature and humidity monitoring using the DHT11 sensor.
-- Water level detection with alert handling.
-- Fan control based on temperature thresholds.
-- Stepper motor vent control using a potentiometer.
-- On/Off button functionality using interrupt service routines (ISRs).
-- Real-time clock module for timestamp logging of events.
-- LCD display showing live temperature, humidity, and system status.
-- Multi-state logic: DISABLED, IDLE, RUNNING, and ERROR.
-- State-specific LED indicators (YELLOW, GREEN, BLUE, RED).
-- Serial output for event logging to a host computer.
-
+- Temperature & Humidity Monitoring via DHT11 sensor
+- Water Level Detection with alerts
+- Fan Control based on temperature thresholds
+- Stepper Motor Control for vent adjustment via potentiometer
+- User Interaction through buttons and LCD screen
+- State Indicators using LEDs (Yellow, Green, Red, Blue)
+- Real-time Logging via Serial output
+  
 ### System Components
-
-- **Arduino Mega2560**
-- **DHT11 Temperature/Humidity Sensor**
-- **Water Level Sensor**
-- **Stepper Motor + Potentiometer**
-- **DC Fan Motor with Separate Power Board**
-- **RTC Module (Real-Time Clock)**
-- **16x2 LCD Display**
-- **Multiple Pushbuttons (Start, Stop, Reset)**
-- **Status LEDs (YELLOW, GREEN, RED, BLUE)**
+- Arduino Mega 2560
+- DHT11 Temperature/Humidity Sensor
+- Water Level Sensor
+- Step Motors & Potentiometer
+- DC Motor & Motor Driver Modules
+- 16x2 LCD Display (I2C)
+- Pushbuttons (Start, Stop, Reset)
+- Status LEDs
 
 ### How It Works
-
-The swamp cooler operates based on its current state. The main loop continuously calls a `checkState()` function (unless disabled), which reads the temperature and water level to determine the correct operational state. Depending on conditions, the system transitions between IDLE, RUNNING, or ERROR. All state changes and key actions are timestamped and printed via Serial communication. The system ensures responsive, low-level performance by avoiding most Arduino libraries and relying instead on direct register manipulation where required.
-
-### Demonstration Video
-
-
-
-### Circuit
-
-
-### Notes
-
-- All code complies with the course requirement to avoid restricted Arduino functions like `pinMode()` and `digitalWrite()` unless explicitly allowed.
-- The system uses `millis()` instead of `delay()` to handle periodic updates like LCD refreshes.
-- Only the motor uses `analogWrite()` as permitted.
+The cooler adjusts its operation based on the readings from the sensors. The system runs in states like IDLE, RUNNING, and ERROR, with transitions logged in real-time. The stepper motor adjusts the vent, while the fan operates based on environmental conditions. Key functions are timestamped and displayed on the LCD.
